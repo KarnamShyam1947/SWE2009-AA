@@ -1,6 +1,5 @@
 package lab2;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 import utils.ArrayUtils;
