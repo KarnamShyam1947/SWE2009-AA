@@ -5,3 +5,4 @@ This repository is created as part of my Analysis of Algorithms(SWE2009). This i
 ## List of Experiments
 
 1. Linear Search and Binary Search
+2. QuickSort

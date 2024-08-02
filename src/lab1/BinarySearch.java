@@ -1,6 +1,9 @@
 package lab1;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import utils.ArrayUtils;
 
 public class BinarySearch {
     private static final int binarySearch(int[] arr, int target) {
@@ -23,18 +26,12 @@ public class BinarySearch {
     
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int size;
-        System.out.print("Enter size of array : ");
-        size = input.nextInt();
-        
-        int[] arr = new int[size];
-        for (int i = 0; i < arr.length; i++) {
-            System.out.printf("Enter value(%d/%d) : ", (i+1), size);
-            arr[i] = input.nextInt();
-        }
+        int[] arr = ArrayUtils.inputArray();
         
         System.out.print("Enter target value to search in array : ");
         int target = input.nextInt();
+
+        Arrays.sort(arr);
 
         int answer = binarySearch(arr, target);
 
