@@ -2,9 +2,33 @@ package lab2;
 
 import java.util.Scanner;
 
-import utils.ArrayUtils;
-
 public class QuickSort {
+
+    public static void printArray(int[] arr, String msg) {
+        System.out.print(msg);
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println("");
+    }
+
+    public static int[] inputArray() {
+        Scanner input = new Scanner(System.in);
+
+        int size;
+        System.out.print("Enter size of array : ");
+        size = input.nextInt();
+        
+        int[] arr = new int[size];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf("Enter value(%d/%d) : ", (i+1), size);
+            arr[i] = input.nextInt();
+        }
+
+        input.close();
+
+        return arr;
+    }
 
     public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
@@ -37,16 +61,14 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
-        int[] arr = ArrayUtils.inputArray();
+        int[] arr = inputArray();
 
-        ArrayUtils.printArray(arr, "\nBefore Sorting : ");
+        printArray(arr, "\nBefore Sorting : ");
         
         quickSort(arr, 0, arr.length - 1);
         
-        ArrayUtils.printArray(arr, "After  Sorting : ");
+        printArray(arr, "After  Sorting : ");
         
-        input.close();
     }
 }

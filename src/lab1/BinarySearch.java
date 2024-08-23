@@ -3,8 +3,6 @@ package lab1;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import utils.ArrayUtils;
-
 public class BinarySearch {
     private static final int binarySearch(int[] arr, int target) {
         int left = 0, right = arr.length - 1;
@@ -15,7 +13,7 @@ public class BinarySearch {
             if (arr[mid] == target) 
                 return mid;
 
-            else if (arr[mid] > target) 
+            else if (arr[mid] < target) 
                 left = mid + 1;
 
             else
@@ -26,13 +24,22 @@ public class BinarySearch {
     
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int[] arr = ArrayUtils.inputArray();
+
+        int size;
+        System.out.print("Enter size of array : ");
+        size = input.nextInt();
+        
+        int[] arr = new int[size];
+        for (int i = 0; i < arr.length; i++) {
+            System.out.printf("Enter value(%d/%d) : ", (i+1), size);
+            arr[i] = input.nextInt();
+        }
         
         System.out.print("Enter target value to search in array : ");
         int target = input.nextInt();
 
         Arrays.sort(arr);
-
+        System.out.println(Arrays.toString(arr));
         int answer = binarySearch(arr, target);
 
         if (answer != -1) 
