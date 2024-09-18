@@ -8,3 +8,4 @@ This repository is created as part of my Analysis of Algorithms(SWE2009). This i
 2. QuickSort
 3. MergeSort
 4. Least Common Subsequence(LCS) Using Dynamic Programming(DP)
+5. matrixChainOrderMultiplication using Dynamic Programming
